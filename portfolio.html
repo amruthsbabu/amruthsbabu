@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AMRUTH S BABU — Software Developer & Data Analyst</title>
+  <meta name="description" content="Portfolio of AMRUTH S BABU — Software Developer & Data Analyst focused on AI/ML, Cloud and Big Data." />
+  <style>
+    /* ---------- FUTURISTIC LIGHT THEME ---------- */
+    :root{
+      --bg: #f7fbff;
+      --panel: #ffffff;
+      --muted: #5b6770;
+      --accent: #0066ff;
+      --accent-2: #00c2a8;
+      --glass: rgba(2,8,23,0.04);
+      --text: #0f1724;
+      --radius: 14px;
+      --mono: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+      --maxw: 1100px;
+      --gap: 20px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--mono);
+      background: linear-gradient(180deg,#f7fbff 0%, #eef6ff 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+      margin:0 auto;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:22px;
+    }
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      text-decoration:none;
+      color:var(--text);
+    }
+
+    .logo{
+      width:56px;height:56px;border-radius:12px;
+      display:grid;place-items:center;font-weight:700;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:white;box-shadow:0 6px 18px rgba(2,6,23,0.08);
+      font-family:monospace;
+    }
+
+    nav{display:flex;gap:10px;align-items:center}
+    nav a{
+      color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-size:14px;
+      transition:all .18s;
+    }
+    nav a:hover{color:var(--text);background:var(--glass)}
+
+    .btn{
+      padding:10px 14px;border-radius:12px;border:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:white;font-weight:700;cursor:pointer;text-decoration:none;
+      display:inline-flex;gap:8px;align-items:center;font-size:14px;
+      box-shadow:0 8px 24px rgba(2,6,23,0.08);
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:var(--gap);
+      align-items:center;
+      margin-bottom:20px;
+    }
+
+    .card{
+      background:var(--panel);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow: 0 6px 30px rgba(24,39,56,0.06);
+      border: 1px solid rgba(12,34,68,0.03);
+    }
+
+    h1{margin:0;font-size:28px;line-height:1.05}
+    .subtitle{color:var(--muted);margin-top:10px;font-size:15px}
+
+    .cta-row{display:flex;gap:12px;margin-top:16px;align-items:center}
+
+    .profile{
+      text-align:center;padding:18px;
+    }
+    .profile img{
+      width:120px;height:120px;border-radius:16px;object-fit:cover;border:3px solid rgba(0,0,0,0.04);margin-bottom:12px;
+      background:linear-gradient(180deg,#f0f6ff,#ffffff);
+    }
+    .profile h3{margin:6px 0 4px 0;font-size:18px}
+    .profile p{margin:0;color:var(--muted);font-size:14px}
+
+    .grid{display:grid;grid-template-columns: repeat(2, 1fr);gap:var(--gap)}
+    .projects{display:grid;grid-template-columns:repeat(1,1fr);gap:14px;margin-top:12px}
+
+    .project-card{
+      padding:14px;border-radius:12px;background:linear-gradient(180deg,#ffffff,#fbfdff);
+      border:1px solid rgba(8,20,40,0.03);
+    }
+    .project-card h4{margin:0 0 8px 0}
+    .project-card p{color:var(--muted);font-size:14px;margin:0 0 12px 0}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#f2f8ff;color:var(--muted);font-size:12px;margin-right:8px}
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .skill{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,#f3fbff,#ffffff);color:var(--muted);font-size:13px;border:1px solid rgba(3,102,255,0.06)}
+
+    .contact-form{display:flex;flex-direction:column;gap:10px}
+    input, textarea{padding:10px;border-radius:10px;border:1px solid rgba(12,34,68,0.06);font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      body{padding:16px}
+      .logo{width:48px;height:48px}
+    }
+
+    /* subtle micro-interactions */
+    a.btn:active{transform:translateY(1px)}
+    .kbd{background:#f1f7ff;border:1px solid rgba(3,102,255,0.06);padding:6px 8px;border-radius:8px;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#home" aria-label="Home">
+        <div class="logo">ASB</div>
+        <div>
+          <div style="font-weight:800">AMRUTH S BABU</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:2px">Software Developer • Data Analyst</div>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#" style="text-decoration:none">Download Resume</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="card">
+        <h1>Hi — I’m <span style="color:var(--accent);">AMRUTH S BABU</span></h1>
+        <div class="subtitle">Building clean, user-focused digital experiences</div>
+
+        <p style="margin-top:14px;color:var(--muted)">
+          BSc Computer Science graduate with a focus on AI/ML, Cloud and Big Data.
+          I blend software engineering and data analysis to create intelligent, production-ready solutions.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn" href="#projects">View projects</a>
+          <a class="btn" href="mailto:amruth.s.babu@lead.ac.in">Email me</a>
+        </div>
+
+        <div style="display:flex;gap:14px;margin-top:18px;color:var(--muted)">
+          <div>
+            <div style="font-weight:800;font-size:18px">Open</div>
+            <div style="font-size:12px">for freelance</div>
+          </div>
+          <div>
+            <div style="font-weight:800;font-size:18px">Mattanur</div>
+            <div style="font-size:12px">Kannur, Kerala</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card profile">
+        <img src="Nw_passport (1).jpg" alt="AMRUTH S BABU" />
+        <h3>AMRUTH S BABU</h3>
+        <p>Software Developer</p>
+
+        <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
+          <a class="btn" href="#contact">Hire me</a>
+          <a class="btn" href="https://github.com/amruthsbabu" style="background:transparent;color:var(--accent);border:1px solid rgba(0,102,255,0.08)">Visit GitHub</a>
+        </div>
+
+        <div style="margin-top:12px;color:var(--muted);font-size:13px">
+          <div><strong>Email:</strong> amruth.s.babu@lead.ac.in</div>
+          <div style="margin-top:6px"><strong>Phone:</strong> +91 9497847801</div>
+          <div style="margin-top:6px"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/amruth-s-babu/" style="color:var(--accent)">amruth-s-babu</a></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- MAIN GRID -->
+    <main class="grid" style="margin-top:18px">
+      <section class="card" id="about">
+        <h2 style="margin-top:0">About</h2>
+        <p style="color:var(--muted)">
+          I'm a BSc Computer Science graduate specializing in AI/ML, Cloud computing and Big Data.
+          I enjoy building systems that transform data into actionable intelligence — from ML models to production web apps.
+        </p>
+
+        <hr style="margin:14px 0;border:none;border-top:1px solid rgba(12,34,68,0.04)">
+
+        <h3>Focus areas</h3>
+        <ul style="color:var(--muted);margin-top:8px">
+          <li>Machine Learning & AI (model building, evaluation)</li>
+          <li>Cloud & Big Data pipelines (ETL, scalable infra)</li>
+          <li>Full-stack software engineering & API integration</li>
+        </ul>
+      </section>
+
+      <section class="card" id="projects">
+        <h2 style="margin-top:0">Selected projects</h2>
+        <p style="color:var(--muted);margin-top:6px">A couple of practical projects showcasing AI integration and text intelligence.</p>
+
+        <div class="projects">
+          <article class="project-card" tabindex="0">
+            <h4>GymMate — AI Gym Companion</h4>
+            <p>
+              Full-stack gym application with an AI chatbot coach and face-detection / recognition for secure check-ins and personalized suggestions.
+            </p>
+            <div style="margin:10px 0">
+              <span class="tag">Python</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Flask / FastAPI</span>
+              <span class="tag">ML / NLP</span>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <a class="btn" href="#" style="font-size:13px;padding:8px 10px">Demo</a>
+              <a class="btn" href="#" style="background:transparent;color:var(--accent);border:1px solid rgba(0,102,255,0.06)">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card" tabindex="0">
+            <h4>Ollamize — Text & PDF Summarizer</h4>
+            <p>
+              A summarization tool focused on extracting concise summaries from text and PDF inputs. Designed for speed and clarity (name: Ollamize).
+            </p>
+            <div style="margin:10px 0">
+              <span class="tag">Python</span>
+              <span class="tag">NLP</span>
+              <span class="tag">PDF parsing</span>
+              <span class="tag">API integration</span>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <a class="btn" href="#" style="font-size:13px;padding:8px 10px">Try</a>
+              <a class="btn" href="https://github.com/amruthsbabu/Ollamize" style="background:transparent;color:var(--accent);border:1px solid rgba(0,102,255,0.06)">Repo</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" id="skills">
+        <h2 style="margin-top:0">Skills</h2>
+        <p style="color:var(--muted);margin-top:6px">Tools, languages & strengths I use regularly.</p>
+
+        <div class="skills">
+          <div class="skill">Python</div>
+          <div class="skill">Java</div>
+          <div class="skill">Machine Learning</div>
+          <div class="skill">NLP / Text Summarization</div>
+          <div class="skill">Computer Vision</div>
+          <div class="skill">API Integration</div>
+          <div class="skill">Cloud (AWS/GCP — familiar)</div>
+          <div class="skill">Big Data fundamentals</div>
+          <div class="skill">SQL / Data Analysis</div>
+          <div class="skill">Git & CI/CD</div>
+        </div>
+
+        <hr style="margin:14px 0;border:none;border-top:1px solid rgba(12,34,68,0.04)">
+
+        <h3>Education</h3>
+        <div style="color:var(--muted);margin-top:8px">
+          <strong>BSc — Computer Science</strong><br/>
+          Focus: AI/ML, Cloud, Big Data
+        </div>
+      </section>
+
+      <section class="card" id="contact">
+        <h2 style="margin-top:0">Contact</h2>
+        <p style="color:var(--muted)">Interested in collaborating or hiring? Send a message — I'll reply to your email.</p>
+
+        <form class="contact-form" onsubmit="composeMail(event)">
+          <input id="cname" placeholder="Your name" required />
+          <input id="cemail" type="email" placeholder="Your email" required />
+          <input id="csubject" placeholder="Subject (optional)" />
+          <textarea id="cmessage" placeholder="Message..." required></textarea>
+          <div style="display:flex;gap:10px">
+            <button class="btn" type="submit">Send message</button>
+            <a class="btn" href="mailto:amruth.s.babu@lead.ac.in" style="background:transparent;color:var(--accent);border:1px solid rgba(0,102,255,0.06)">Email directly</a>
+          </div>
+        </form>
+
+        <div style="margin-top:12px;color:var(--muted);font-size:14px">
+          <div><strong>Email:</strong> amruth.s.babu@lead.ac.in</div>
+          <div style="margin-top:6px"><strong>Phone:</strong> +91 9497847801</div>
+          <div style="margin-top:6px"><strong>Location:</strong> Mattanur, Kannur, Kerala</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> AMRUTH S BABU — Software Developer & Data Analyst
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function composeMail(e){
+      e.preventDefault();
+      const name = document.getElementById('cname').value.trim();
+      const email = document.getElementById('cemail').value.trim();
+      const subject = document.getElementById('csubject').value.trim() || 'Portfolio inquiry';
+      const msg = document.getElementById('cmessage').value.trim();
+      const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+      const mailto = `mailto:amruth.s.babu@lead.ac.in?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = mailto;
+    }
+  </script>
+</body>
+</html>
