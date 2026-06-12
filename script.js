@@ -230,6 +230,11 @@ function initContactForm() {
   form.addEventListener('submit', e => {
     e.preventDefault();
 
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
     const submitBtn = form.querySelector('button[type="submit"]');
     const origText = submitBtn.innerHTML;
     submitBtn.disabled = true;
@@ -240,19 +245,65 @@ function initContactForm() {
       </svg> Sending...
     `;
 
-    setTimeout(() => {
+    // TODO: Go to https://web3forms.com/ to get your free Access Key and paste it below.
+    const accessKey = 'YOUR_ACCESS_KEY_HERE';
+
+    if (accessKey === 'YOUR_ACCESS_KEY_HERE') {
+      // Fallback message if they haven't configured the key yet
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origText;
+        formMsg.classList.remove('hidden', 'text-emerald-600');
+        formMsg.classList.add('text-rose-600');
+        formMsg.textContent = 'Please configure your Web3Forms Access Key in script.js to send emails.';
+        setTimeout(() => {
+          formMsg.classList.add('hidden');
+        }, 6000);
+      }, 1000);
+      return;
+    }
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        access_key: accessKey,
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        from_name: 'Portfolio Contact Form'
+      })
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        formMsg.classList.remove('hidden', 'text-rose-600');
+        formMsg.classList.add('text-emerald-600');
+        formMsg.textContent = 'Message sent! Thank you for reaching out. Amruth will contact you soon.';
+        form.reset();
+      } else {
+        console.log(response);
+        formMsg.classList.remove('hidden', 'text-emerald-600');
+        formMsg.classList.add('text-rose-600');
+        formMsg.textContent = json.message || 'Something went wrong. Please try again.';
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      formMsg.classList.remove('hidden', 'text-emerald-600');
+      formMsg.classList.add('text-rose-600');
+      formMsg.textContent = 'Network error. Please check your connection and try again.';
+    })
+    .finally(() => {
       submitBtn.disabled = false;
       submitBtn.innerHTML = origText;
-      
-      formMsg.classList.remove('hidden');
-      formMsg.classList.add('text-emerald-600');
-      formMsg.textContent = 'Message sent! Thank you for reaching out. Amruth will contact you soon.';
-      
-      form.reset();
-      
       setTimeout(() => {
         formMsg.classList.add('hidden');
       }, 5000);
-    }, 1200);
+    });
   });
 }
